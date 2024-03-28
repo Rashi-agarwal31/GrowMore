@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;1,200&display=swap');
+
+body{
+    font-family: 'Roboto' , sans-serif;
+}
+
+:root{
+    --green: green;
+    --black: #130f40;
+    --light-color: #666;
+    --box-shadow: 0 .1rem .1rem rgba(0,0,0.1);
+    --border: .2rem solid rgba(0,0,0.1);
+    --outline: .1rem solid rgba(0,0,0.1);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Lora', serif;
+	font-family: "Nunito Sans, sans-serif";
+	font-family: 'Source Code Pro', monospace;
+}
+
+.heading{
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--black);
+}
+
+.heading span{
+    background: var(--green);
+    color: white;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%,0% 0%);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--black);
+    font-family: 'Lora', serif;
+	font-family: "Nunito Sans, sans-serif";
+	font-family: 'Source Code Pro', monospace;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(0,128,0);
+    border-radius: 3px;
+}
+
+select {
+    background-color: #fff;
+}
+
+button {
+    background-color: rgb(0,128,0);
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 17px;
+	letter-spacing: 1px;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bolder;
+	width: 160px;
+	height: 40px;
+	position: relative;
+	border: 1px solid rgb(0,128,0);
+	transition: 0.4s;
+}
+
+button:hover {
+    background-color: rgb(0,128,0);
+}
+
+#healthSummary {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: 'Lora', serif;
+	font-family: "Nunito Sans, sans-serif";
+	font-family: 'Source Code Pro', monospace;
+}
+
+#healthSummary h2 {
+    font-size: 20px;
+    color: var(--black);
+    font-family: 'Lora', serif;
+	font-family: "Nunito Sans, sans-serif";
+	font-family: 'Source Code Pro', monospace;
+}
+
+#healthSummary p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--light-color);
+    font-family: 'Lora', serif;
+	font-family: "Nunito Sans, sans-serif";
+	font-family: 'Source Code Pro', monospace;
+}
+
+#healthSummary span {
+    font-weight: bold;
+    color: #007bff;
+    font-family: 'Lora', serif;
+	font-family: "Nunito Sans, sans-serif";
+	font-family: 'Source Code Pro', monospace;
+}

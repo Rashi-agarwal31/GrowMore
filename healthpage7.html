@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Input</title>
+    <link rel="stylesheet" href="healthpage33.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading"><span>Health Input Form</span></h1>
+        <form id="healthForm">
+            <div class="form-group">
+                <label for="bloodPressure">Blood Pressure:</label>
+                <input type="text" id="bloodPressure" name="bloodPressure">
+            </div>
+
+            <div class="form-group">
+                <label for="diabetesLevel">Diabetes Level:</label>
+                <input type="text" id="diabetesLevel" name="diabetesLevel">
+            </div>
+
+            <div class="form-group">
+                <label for="heartRate">Heart Rate:</label>
+                <input type="text" id="heartRate" name="heartRate">
+            </div>
+
+            <div class="form-group">
+                <label for="oxygenLevels">Oxygen Levels:</label>
+                <input type="text" id="oxygenLevels" name="oxygenLevels">
+            </div>
+
+            <div class="form-group">
+                <label for="foodAllergies">Food Allergies:</label>
+                <select id="foodAllergies" name="foodAllergies" onchange="handleFoodAllergies()">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="foodItemInput" style="display: none;">
+                <label for="foodItem">Enter Food Item:</label>
+                <input type="text" id="foodItem" name="foodItem">
+            </div>
+
+            <div class="form-group">
+                <label for="healthProblems">Other Health Related Problems:</label>
+                <select id="healthProblems" name="healthProblems">
+                    <option value="None">None</option>
+                    <option value="Thyroid">Thyroid</option>
+                    <option value="Asthma">Asthma</option>
+                    <option value="Epilepsy">Epilepsy</option>
+                    <option value="Seizures">Seizures</option>
+                    <option value="PCOD">PCOD</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="defaultValues" name="defaultValues">
+                <label for="defaultValues">Use Default Values</label>
+            </div>
+
+            <button type="button" onclick="showHealthSummary()">Submit</button>
+        </form>
+        
+        <div id="healthSummary" class="hidden">
+            <h2>Health Summary</h2>
+            <p id="summaryText"></p>
+            <h2>Nutritional Requirements</h2>
+            <p>Proteins: <span id="proteins">0g</span></p>
+            <p>Carbohydrates: <span id="carbohydrates">0g</span></p>
+            <p>Fats: <span id="fats">0g</span></p>
+            <p>Cholesterol: <span id="cholesterol">0mg</span></p>
+            <p>Vitamins: <span id="vitamins">0mg</span></p>
+            <p>Minerals: <span id="minerals">0mg</span></p>
+            <p>Water: <span id="water">0ml</span></p>
+            <p>Fibre: <span id="fibre">0g</span></p>
+        </div>
+    </div>
+
+    <script>
+        function showHealthSummary() {
+            const form = document.getElementById('healthForm');
+            const bloodPressure = form.bloodPressure.value;
+            const diabetesLevel = form.diabetesLevel.value;
+            const heartRate = form.heartRate.value;
+            const oxygenLevels = form.oxygenLevels.value;
+            const foodAllergies = form.foodAllergies.value;
+            const foodItem = form.foodItem.value;
+            const healthProblems = form.healthProblems.value;
+            
+            // Handle food allergies and remove related items from the database (placeholder action).
+            if (foodAllergies === 'yes' && foodItem) {
+                // Placeholder action: Remove the food item from the database.
+                console.log(`Removed ${foodItem} from the database.`);
+            }
+
+            // Create a health summary.
+            let healthSummary = `Blood Pressure: ${bloodPressure}, Diabetes Level: ${diabetesLevel}, Heart Rate: ${heartRate}, Oxygen Levels: ${oxygenLevels}, Food Allergies: ${foodAllergies}, If yes, then name of food item causing food allergy: ${foodItem}, Other Health problems: ${healthProblems}`;
+            if (form.defaultValues.checked) {
+                // Include default values in the health summary.
+                healthSummary = `Blood Pressure: 120/80, Diabetes Level: Normal, Heart Rate: 70 bpm, Oxygen Levels: 98%, Food Allergies: No, Other Health problems: None`;
+                //healthSummary += "\nDefault Values Used.";
+                // Autofill input boxes with default values.
+                document.getElementById('bloodPressure').value = '120/80';
+                document.getElementById('diabetesLevel').value = 'Normal';
+                document.getElementById('heartRate').value = '70 bpm';
+                document.getElementById('oxygenLevels').value = '98%';
+            }
+
+            document.getElementById('summaryText').textContent = healthSummary;
+
+            // Calculate and display placeholder nutrient values (replace with actual calculations).
+            const proteins = 50; // Replace with calculated value
+            const carbohydrates = 200; // Replace with calculated value
+            const fats = 70; // Replace with calculated value
+            const cholesterol = 30; // Replace with calculated value
+            const vitamins = 'Vitamin A, B, C'; // Replace with calculated value
+            const minerals = 'Calcium, Iron, Zinc'; // Replace with calculated value
+            const water = '2 liters'; // Replace with calculated value
+            const fibre = '25g'; // Replace with calculated value
+
+            document.getElementById('proteins').textContent = `${proteins}g`;
+            document.getElementById('carbohydrates').textContent = `${carbohydrates}g`;
+            document.getElementById('fats').textContent = `${fats}g`;
+            document.getElementById('cholesterol').textContent = `${cholesterol}mg`;
+            document.getElementById('vitamins').textContent = vitamins;
+            document.getElementById('minerals').textContent = minerals;
+            document.getElementById('water').textContent = water;
+            document.getElementById('fibre').textContent = fibre;
+
+            // Show the health summary and nutrients after submitting.
+            const healthSummaryDiv = document.getElementById('healthSummary');
+            healthSummaryDiv.style.display = 'block';
+            
+            // Hide the form using setTimeout after showing the summary and nutrients.
+            //setTimeout(function() {
+                //form.style.display = 'none';
+            //}, 0);
+        }
+
+        function handleFoodAllergies() {
+            const foodAllergies = document.getElementById('foodAllergies').value;
+            const foodItemInput = document.getElementById('foodItemInput');
+            
+            if (foodAllergies === 'yes') {
+                foodItemInput.style.display = 'block';
+            } else {
+                foodItemInput.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

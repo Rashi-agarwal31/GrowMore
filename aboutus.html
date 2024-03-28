@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora&family=Nunito:wght@300&family=Source+Code+Pro:wght@300&display=swap');
+        html{
+            font-size: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 7rem;
+        }
+        
+        *{
+            font-family: 'Lora', serif;
+            font-family: 'Nunito', sans-serif;
+            font-family: 'Source Code Pro', monospace;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all .5s linear
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: green;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 2em;
+            flex: 1 1 40%;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            max-width: 100px;
+            height: auto;
+        }
+
+        footer {
+            background-color: green;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <title>About Us</title>
+</head>
+<body>
+
+    <header>
+        <h1>Meet our Team</h1>
+    </header>
+
+    <section>
+        <div class="team-member">
+            <img src="rashi.jpeg" alt="Team Member 1">
+            <h2>Rashi Agarwal</h2>
+            <p>Co-founder & Developer</p>
+            <p>"Creating a seamless online shopping experience for our customers is my passion."</p>
+            <p>Contact: <a href="tel:+1234567890">+91 234 567 890</a></p>
+            <p>Email: <a href="mailto:john@example.com">rashi@example.com</a></p>
+        </div>
+
+        <div class="team-member">
+            <img src="priyanka.jpeg" alt="Team Member 2">
+            <h2>Priyanka Mehta</h2>
+            <p>Co-founder & Designer</p>
+            <p>"Designing beautiful and user-friendly interfaces is what I love to do."</p>
+            <p>Contact: <a href="tel:+9876543210">+91 987 654 3210</a></p>
+            <p>Email: <a href="mailto:jane@example.com">priyanka@example.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 GrowMore</p>
+    </footer>
+
+</body>
+</html>
