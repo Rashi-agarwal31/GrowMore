@@ -1,1 +1,2 @@
 # GrowMore
+This website "GrowMore", constructed using web development techniques like - HTML, CSS, JavaScript, a dynamic e-commerce platform delivering daily groceries within a 20-minute window nationwide. Distinguished by its innovative health-centric feature, the website collects user health details, including blood pressure and diabetes, to offer personalized grocery recommendations aligning with individual health needs. Demonstrated expertise in creating user-centric web solutions with a focus on efficiency and well-being.
